@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="cqiapb88">
+  <resources>
+    <component id="fhn90" name="Component1.xml" path="/" exported="true"/>
+    <font id="u1mz1" name="number.fnt" path="/res/"/>
+    <image id="u1mz2" name="tongsedisable.png" path="/res/"/>
+    <image id="u1mz3" name="zhenglie.png" path="/res/"/>
+    <image id="u1mz4" name="shizi.png" path="/res/"/>
+    <image id="u1mz5" name="bianheng.jpg" path="/res/"/>
+    <image id="u1mz7" name="zhenghang.png" path="/res/"/>
+    <image id="u1mz8" name="propbox.png" path="/res/"/>
+    <image id="u1mz9" name="catfoucs.png" path="/res/"/>
+    <image id="u1mza" name="levelreqbg.png" path="/res/" scale="9grid" scale9grid="36,47,265,94"/>
+    <image id="u1mzb" name="number.png" path="/res/"/>
+    <image id="u1mzc" name="starbox.png" path="/res/"/>
+    <image id="u1mzd" name="baizi.png" path="/res/"/>
+    <image id="u1mze" name="bianshu.jpg" path="/res/"/>
+    <image id="u1mzf" name="chanzi.png" path="/res/"/>
+    <image id="u1mzg" name="gameovertitle.png" path="/res/"/>
+    <image id="u1mzh" name="zhadan.png" path="/res/"/>
+    <image id="u1mzi" name="tongse.png" path="/res/"/>
+    <image id="u1mzk" name="gongzi.png" path="/res/"/>
+    <image id="u1mzl" name="foucsmc 2.png" path="/res/"/>
+    <image id="u1mzm" name="elementbg1.png" path="/res/"/>
+    <image id="u1mzn" name="chanzidisable.png" path="/res/"/>
+    <image id="u1mzo" name="propbg.png" path="/res/"/>
+    <image id="u1mzp" name="zhengliedisable.png" path="/res/"/>
+    <image id="u1mzq" name="elementbg2.png" path="/res/"/>
+    <image id="u1mzr" name="zhadandisable.png" path="/res/"/>
+    <image id="u1mzs" name="zhenghangdisable.png" path="/res/"/>
+    <image id="u1mzu" name="propboxdisable.png" path="/res/"/>
+    <image id="u1mzv" name="background.jpg" path="/res/"/>
+    <image id="u1mzw" name="checkmark.png" path="/res/"/>
+    <image id="u1mzx" name="e2.png" path="/res/"/>
+    <image id="u1mzy" name="numberdisable.png" path="/res/"/>
+    <image id="u1mzz" name="e3.png" path="/res/"/>
+    <image id="u1mz10" name="gameoverpanel_success.png" path="/res/"/>
+    <image id="u1mz11" name="e1.png" path="/res/"/>
+    <image id="u1mz12" name="e0.png" path="/res/"/>
+    <image id="u1mz13" name="e4.png" path="/res/"/>
+    <image id="u1mz14" name="propboxactive.png" path="/res/"/>
+    <image id="u1mz15" name="e5.png" path="/res/"/>
+    <font id="u1mz16" name="numberdisable.fnt" path="/res/"/>
+    <image id="u1mz17" name="chengzi.png" path="/res/"/>
+    <image id="u1mz18" name="star.png" path="/res/"/>
+    <image id="u1mz19" name="levelreqtitle.png" path="/res/"/>
+    <image id="u1mz1a" name="sursteptitle.png" path="/res/"/>
+    <image id="u1mz1b" name="bianjiao.png" path="/res/"/>
+    <image id="u1mz1c" name="gameoverpanel_fail.png" path="/res/"/>
+    <image id="u1mz1d" name="foucsmc.png" path="/res/"/>
+    <image id="u1mz1h" name="bg.png" path="/res/"/>
+    <component id="u1mz1i" name="tasks.xml" path="/"/>
+    <component id="u1mz1j" name="taskItem.xml" path="/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

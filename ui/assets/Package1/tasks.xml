@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="357,161">
+  <displayList>
+    <loader id="n3_u1mz" name="n3" xy="0,18" size="469,142" url="ui://cqiapb88u1mza" align="center" vAlign="middle" fill="scaleFree">
+      <relation target="n0_u1mz" sidePair="rightext-right"/>
+    </loader>
+    <list id="n0_u1mz" name="n0" xy="22,64" size="403,80" layout="row" scroll="horizontal" colGap="1" defaultItem="ui://cqiapb88u1mz1j" align="center" vAlign="middle">
+      <relation target="n3_u1mz" sidePair="center-center"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <loader id="n1_u1mz" name="n1" xy="150,0" size="147,55" url="ui://cqiapb88u1mz19" fill="scale">
+      <relation target="n3_u1mz" sidePair="center-center"/>
+    </loader>
+  </displayList>
+</component>
