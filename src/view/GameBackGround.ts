@@ -41,25 +41,18 @@ class GameBackGround extends egret.Sprite {
         if (!this.girdBg) {
             this.girdBg = new Array();
         }
-        var gird: egret.Bitmap;
         for (var i: number = 0; i < GameData.MaxRow; i++) {
             for (var t: number = 0; t < GameData.MaxColumn; t++) {
-                if (GameData.hasGameElementIdAt(i,t)) {
-                    if (this.girdBg.length < (i * GameData.MaxRow + t)) {
-                        gird = new egret.Bitmap();
-                        this.girdBg.push(gird);
-                    }
-                    else {
-                        gird = this.girdBg[i * GameData.MaxRow + t];
-                    }
+                if (GameData.hasGameElementIdAt(i, t)) {
+                    let gird: egret.Bitmap = new egret.Bitmap();
+                    this.girdBg.push(gird);
                     gird.width = GameData.gridWidth;
-                    gird.height = GameData.gridHeight;
+                    gird.height = GameData.gridWidth;
                     gird.x = GameData.startX + GameData.gridWidth * t;
-                    gird.y = GameData.startY + GameData.gridHeight * i;
+                    gird.y = GameData.startY + GameData.gridWidth * i;
                     if ((i % 2 == 0 && t % 2 == 0) || (i % 2 == 1 && t % 2 == 1)) {
                         gird.texture = RES.getRes("elementbg1");
-                    }
-                    else {
+                    } else {
                         gird.texture = RES.getRes("elementbg2");
                     }
                     this.addChild(gird);
