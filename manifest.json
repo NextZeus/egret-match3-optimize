@@ -13,7 +13,7 @@
 	],
 	"game": [
 		"bin-debug/data/element/BaseElement.js",
-		"bin-debug/Main.js",
+		"bin-debug/data/element/GameElement.js",
 		"bin-debug/data/GameData.js",
 		"bin-debug/data/LevelGameDataParse.js",
 		"bin-debug/data/LevelRequire.js",
@@ -23,7 +23,7 @@
 		"bin-debug/data/MapDataPares.js",
 		"bin-debug/data/PropLogic.js",
 		"bin-debug/GameLogic.js",
-		"bin-debug/view/PropViewManage.js",
+		"bin-debug/Main.js",
 		"bin-debug/data/element/LevelRequireElement.js",
 		"bin-debug/event/ElementViewManageEvent.js",
 		"bin-debug/view/ElementView.js",
@@ -33,6 +33,6 @@
 		"bin-debug/view/LevelElementView.js",
 		"bin-debug/view/LevelReqViewManage.js",
 		"bin-debug/view/PropView.js",
-		"bin-debug/data/element/GameElement.js"
+		"bin-debug/view/PropViewManage.js"
 	]
 }

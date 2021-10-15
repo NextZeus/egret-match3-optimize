@@ -273,13 +273,15 @@ class LinkLogic {
                         }
                     }
                     // 横向 方式2
-                    if (t < (GameData.MaxColumn - 2) && GameData.mapData[i][t + 2] != -1 && currGameElement.type == GameData.elements[GameData.mapData[i][t + 2]].type) {
-                        if (GameData.mapData[i][t + 1] != -1) {
-                            if (i > 0 && GameData.mapData[i - 1][t + 1] && GameData.mapData[i - 1][t + 1] != -1 && GameData.elements[GameData.mapData[i - 1][t + 1]].type == currGameElement.type) {
+                    if (t < (GameData.MaxColumn - 2) && GameData.hasGameElementIdAt(i, t + 2) && currGameElement.type == GameData.elements[GameData.mapData[i][t + 2]].type) {
+                        if (GameData.hasGameElementIdAt(i, t + 1)) {
+                            // 右上角
+                            if (i > 0 && GameData.mapData[i - 1][t + 1] && GameData.hasGameElementIdAt(i - 1, t + 1) && GameData.elements[GameData.mapData[i - 1][t + 1]].type == currGameElement.type) {
                                 console.log("-2能消除项目1！！！", i, t);
                                 return true;
                             }
-                            if (i < (GameData.MaxRow - 1) && GameData.mapData[i + 1][t + 1] && GameData.mapData[i + 1][t + 1] != -1 && GameData.elements[GameData.mapData[i + 1][t + 1]].type == currGameElement.type) {
+                            // 右下角
+                            if (i < (GameData.MaxRow - 1) && GameData.mapData[i + 1][t + 1] && GameData.hasGameElementIdAt(i + 1, t + 1) && GameData.elements[GameData.mapData[i + 1][t + 1]].type == currGameElement.type) {
                                 console.log("-2能消除项目2！！！", i, t);
                                 return true;
                             }
