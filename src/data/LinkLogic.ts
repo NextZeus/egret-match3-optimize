@@ -82,8 +82,8 @@ class LinkLogic {
             sameTypeCount = 0;
         }
 
-        console.log("可消除 LinkLogic.lines", LinkLogic.lines);
-
+        console.log("检索可消除元素完毕 LinkLogic.lines=>", LinkLogic.lines.toString());
+        GameData.printMapData();
         // 返回是否有可消除元素
         return LinkLogic.lines.length != 0;
     }
@@ -98,6 +98,8 @@ class LinkLogic {
                 console.log(`横压入数组, typeNum:${sameTypeCount} row:${row}, column:${column}, q:${q}, _column:${(column - q - 1)}, id:${GameData.mapData[row][column - q - 1]}`);
                 arr.push(GameData.mapData[row][column - q - 1]);
             }
+            console.log('水平方向 ', arr.join(','),' => LinkLogic.lines');
+            
             LinkLogic.lines.push(arr);
         }
     }
@@ -112,6 +114,7 @@ class LinkLogic {
                 console.log(`纵压入数组, typeNum:${sameTypeCount} row:${row}, column:${column}, _row:${(row - q - 1)} q:${q}  id:${GameData.mapData[row - q - 1][column]}`);
                 arr.push(GameData.mapData[row - q - 1][column]);
             }
+            console.log('垂直方向 ', arr.join(','),' => LinkLogic.lines');
             LinkLogic.lines.push(arr);
         }
     }
@@ -138,8 +141,6 @@ class LinkLogic {
         // 是否有可消除元素
         var haveLine: boolean = LinkLogic.isHaveLine();
         if (haveLine) {
-            // GameData.elements[p1id].location = p2Location;
-            // GameData.elements[p2id].location = p1Location;
             GameData.elements[p1id].setLocation(p2Location);
             GameData.elements[p2id].setLocation(p1Location);
         } else {

@@ -1,0 +1,87 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "startGame",
+  "steps": [
+    {
+      "file": "src/view/ElementViewManage.ts",
+      "description": "点击地图元素",
+      "line": 27
+    },
+    {
+      "file": "src/view/ElementViewManage.ts",
+      "description": "点击不同元素 触发事件：TAP_TWO_ELEMENT",
+      "line": 65
+    },
+    {
+      "file": "src/GameLogic.ts",
+      "description": "走到这 判断两个元素是否可以移动",
+      "line": 54
+    },
+    {
+      "file": "src/GameLogic.ts",
+      "description": "可移动情况下，判断是否可消除",
+      "line": 61
+    },
+    {
+      "file": "src/view/ElementView.ts",
+      "description": "元素消除动画播放完毕 派发 SINGLE_ELEMENT_VIEW_MOVE_ANIMATION_OVER 事件",
+      "line": 194
+    },
+    {
+      "file": "src/view/ElementViewManage.ts",
+      "description": "两个元素移动位置动画都结束 派发 ALL_ELEMENT_MOVE_ANIMATION_OVER 事件",
+      "line": 178
+    },
+    {
+      "file": "src/GameLogic.ts",
+      "description": "ALL_ELEMENT_MOVE_ANIMATION_OVER handler --\n元素视图处理完毕，紧接着到这里, 处理数据",
+      "line": 87
+    },
+    {
+      "file": "src/view/ElementView.ts",
+      "description": "SINGLE_ELEMENT_VIEW_DISAPPEARED 元素曲线移动到收集元素目标位置处消失",
+      "line": 213
+    },
+    {
+      "file": "src/view/ElementView.ts",
+      "description": "SINGLE_ELEMENT_VIEW_DISAPPEARED 元素直接消失",
+      "line": 235
+    },
+    {
+      "file": "src/view/ElementViewManage.ts",
+      "description": "所有可消除元素都消失了 派发 ALL_ELEMENT_VIEW_DISAPPEARED 事件",
+      "line": 215
+    },
+    {
+      "file": "src/GameLogic.ts",
+      "description": "这时候就需要更新地图元素 消除元素位置空缺，需要补漏",
+      "line": 113
+    },
+    {
+      "file": "src/data/MapControl.ts",
+      "description": "到这里 更新地图元素位置逻辑",
+      "line": 68
+    },
+    {
+      "file": "src/view/ElementViewManage.ts",
+      "description": "地图元素重新分配以后，需要更新地图元素位置",
+      "line": 222
+    },
+    {
+      "file": "src/view/ElementViewManage.ts",
+      "description": "所有元素位置移动结束，派发 ALL_ELEMENT_VIEW_UPDATE_LOCATION_OVER 事件",
+      "line": 244
+    },
+    {
+      "file": "src/GameLogic.ts",
+      "description": "元素重新分配并且移动结束后，需要判断是否有可消除元素",
+      "line": 122
+    },
+    {
+      "file": "src/GameLogic.ts",
+      "description": "检查游戏是否结束，没有结束，从第一步再重新开始",
+      "line": 149
+    }
+  ],
+  "ref": "develop"
+}

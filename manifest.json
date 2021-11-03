@@ -19,7 +19,6 @@
 		"bin-debug/data/LevelRequire.js",
 		"bin-debug/data/LinkLogic.js",
 		"bin-debug/data/MapControl.js",
-		"bin-debug/data/MapDataInterface.js",
 		"bin-debug/data/MapDataPares.js",
 		"bin-debug/data/PropLogic.js",
 		"bin-debug/GameLogic.js",

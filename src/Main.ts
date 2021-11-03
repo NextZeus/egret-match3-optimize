@@ -12,7 +12,7 @@ class Main extends egret.DisplayObjectContainer {
         //初始化Resource资源加载库
         //initiate Resource loading library
         RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
-            RES.loadConfig("resource/resource.json", "resource/");
+        RES.loadConfig("resource/resource.json", "resource/");
     }
     /**
      * 配置文件加载完成,开始预加载preload资源组。
@@ -47,8 +47,8 @@ class Main extends egret.DisplayObjectContainer {
         this.onResourceLoadComplete(event);
     }
 
-    private _gameLogic:GameLogic;
-    private _gameLayer:egret.Sprite;
+    private _gameLogic: GameLogic;
+    private _gameLayer: egret.Sprite;
     private createGameScene(): void {
         this._gameLayer = new egret.Sprite();
         this.addChild(this._gameLayer);

@@ -25,9 +25,10 @@ class GameData {
             var arr: Array<number> = new Array();
             GameData.mapData.push(arr);
             for (var t: number = 0; t < GameData.MaxColumn; t++) {
-                GameData.mapData[i].push(-2);
+                GameData.mapData[i].push(-2); // 填充占位
             }
         }
+        // console.log('init mapData:', GameData.mapData);
 
         GameData.elements = new Array();
         GameData.unUsedElementsId = new Array();
@@ -39,6 +40,8 @@ class GameData {
 
         GameData.stageW = egret.MainContext.instance.stage.stageWidth;
         GameData.stageH = egret.MainContext.instance.stage.stageHeight;
+        // console.log('init elements:', GameData.elements);
+        // console.log('init unUsedElementsId:', GameData.unUsedElementsId);
 
         GameData.levelreq = new LevelRequire();
     }
@@ -62,7 +65,7 @@ class GameData {
         return GameData.mapData[row][column] != -1;
     }
 
-    public static getMapDataIdByLocation(location:number): number {
+    public static getMapDataIdByLocation(location: number): number {
         const [row, column] = this.getRowAndColumnByLocation(location);
         return GameData.mapData[row][column];
     }
@@ -101,5 +104,19 @@ class GameData {
     // 消除元素 y轴开始坐标
     public static get startY(): number {
         return (GameData.stageH - (GameData.stageW - 30) / 6 - 60) - GameData.gridWidth * GameData.MaxColumn;
+    }
+
+    public static printMapData() {
+        console.log('------id分布------');
+
+        // 输出日志 便于观察
+        for (let row: number = 0; row < GameData.MaxRow; row++) {
+            let str = ``;
+            for (let col: number = 0; col < GameData.MaxColumn; col++) {
+                let id = GameData.mapData[row][col]
+                str += (id >= 10 ? ' ' : id < 0 ? ' ' : ' 0') + id;
+            }
+            console.log(str);
+        }
     }
 }

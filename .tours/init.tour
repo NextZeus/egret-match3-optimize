@@ -1,5 +1,76 @@
 {
   "$schema": "https://aka.ms/codetour-schema",
   "title": "init",
-  "steps": []
+  "steps": [
+    {
+      "file": "src/Main.ts",
+      "description": "入口",
+      "line": 55
+    },
+    {
+      "file": "src/GameLogic.ts",
+      "description": "初始化数据 - 地图 元素 数据",
+      "line": 15
+    },
+    {
+      "file": "src/data/GameData.ts",
+      "description": "创建地图数据 8 * 8 的地图，64个元素",
+      "line": 24
+    },
+    {
+      "file": "src/data/GameData.ts",
+      "description": "初始化元素数据 - new GameElement(index)",
+      "line": 36
+    },
+    {
+      "file": "src/GameLogic.ts",
+      "description": "解析地图配置，将空白位置的地图赋值为 -1",
+      "line": 19
+    },
+    {
+      "file": "src/GameLogic.ts",
+      "description": "初始化关卡数据 - 步数，收集元素，背景图类型等",
+      "line": 20
+    },
+    {
+      "file": "src/GameLogic.ts",
+      "description": "创建整个地图的元素 - 初始化地图元素，初始化时不能有可消除的元素",
+      "line": 23
+    },
+    {
+      "file": "src/data/MapControl.ts",
+      "description": "随意一个元素类型",
+      "line": 22
+    },
+    {
+      "file": "src/data/MapControl.ts",
+      "description": "循环遍历所有地图元素，判断当前元素的 上面|左边 两个元素 存在&类型是否相同\n相同则重新随机，不相同则继续往下",
+      "line": 35
+    },
+    {
+      "file": "src/data/MapControl.ts",
+      "description": "unUsedElementsId - 初始化时有64个id 0~63, 但是地图不一定所有方块内都有元素。\n从中取一个作为当前方块的元素id\n设置elements[id].location 位置信息 (GameElement id确定后不会再修改 location只要移动就会修改)",
+      "line": 48
+    },
+    {
+      "file": "src/GameLogic.ts",
+      "description": "初始化视图管理器",
+      "line": 41
+    },
+    {
+      "file": "src/view/ElementViewManage.ts",
+      "description": "初始化元素视图，绑定id，location",
+      "line": 25
+    },
+    {
+      "file": "src/view/ElementViewManage.ts",
+      "description": "注册事件监听器，监听单个元素视图的事件\nTOUCH_TAP - 点击事件\nSINGLE_ELEMENT_VIEW_MOVE_ANIMATION_OVER - 移动动画结束\nSINGLE_ELEMENT_VIEW_DISAPPEARED - 元素视图消失动画\nSINGLE_ELEMENT_VIEW_UPDATE_LOCATION_OVER - 元素移动到新的位置(消失后被重复利用，从上方掉落到移动后空白的方块位置)",
+      "line": 30
+    },
+    {
+      "file": "src/GameLogic.ts",
+      "description": "添加事件监听器\nTAP_TWO_ELEMENT - 点击两个元素，检测是否可以移动\nALL_ELEMENT_MOVE_ANIMATION_OVER - 元素交换位置动画播放完毕，消除的元素如果是收集目标元素，播放移动动画\nALL_ELEMENT_VIEW_DISAPPEARED - 消除元素消失后，刷新地图元素，更新地图元素位置\nALL_ELEMENT_VIEW_UPDATE_LOCATION_OVER - 删除动画完成后，检测地图中是否存在剩余可消除元素",
+      "line": 47
+    }
+  ]
 }
