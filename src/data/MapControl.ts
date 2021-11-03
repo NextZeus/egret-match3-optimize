@@ -79,7 +79,7 @@ class MapControl {
                 let gameElementId: number = LinkLogic.lines[i][j];
                 if (!uniqueRemoveGameElementId.has(gameElementId)) {
                     uniqueRemoveGameElementId.add(gameElementId);
-                    console.log(`${gameElementId} => uniqueRemoveGameElementId`);
+                    // console.log(`${gameElementId} => uniqueRemoveGameElementId`);
                     let [row] = GameData.getRowAndColumnByLocation(GameData.elements[gameElementId].location);
                     if (row > uniqueRemoveGameElementIdMaxRow) {
                         uniqueRemoveGameElementIdMaxRow = row;
@@ -90,7 +90,7 @@ class MapControl {
                     let column = GameData.getColumnByGameElementId(gameElementId);
                     if (!uniqueColumnOfRemoveGameElement.has(column)) {
                         uniqueColumnOfRemoveGameElement.add(column);
-                        console.log(`${column} => uniqueColumnOfRemoveGameElement`);
+                        // console.log(`${column} => uniqueColumnOfRemoveGameElement`);
                     }
                 }
             }
@@ -130,25 +130,25 @@ class MapControl {
                     if (uniqueRemoveGameElementId.has(gameElementId)) {
                         gameElementIdArrOfRemoved.push(gameElementId);
                         // console.log('remove gameElementId:', gameElementId, ' row:', row, ' column:', column, ' location:', GameData.elements[gameElementId].location);
-                        console.log(`row:${row} column:${column} ${gameElementId} => gameElementIdArrOfRemoved`);
+                        // console.log(`row:${row} column:${column} ${gameElementId} => gameElementIdArrOfRemoved`);
                     } else {
                         // 当前行没有要删除的元素 但是当前列有删除的元素 说明当前行的元素需要移动位置
                         if (GameData.hasGameElementIdAt(row, column)) {
                             gameElementIdArrAtUp.push(gameElementId);
                             // console.log('up gameElementId:', gameElementId, ' row:', row, ' column:', column, ' location:', GameData.elements[gameElementId].location);
-                            console.log(`row:${row} column:${column} ${gameElementId} => gameElementIdArrAtUp`);
+                            // console.log(`row:${row} column:${column} ${gameElementId} => gameElementIdArrAtUp`);
                         }
                     }
                 }
 
-                console.log('gameElementIdArrOfRemoved ', gameElementIdArrOfRemoved);
-                console.log('gameElementIdArrOfUp ', gameElementIdArrAtUp);
+                console.log(`${gameElementIdArrOfRemoved.toString()} => gameElementIdArrOfRemoved`);
+                console.log(`${gameElementIdArrAtUp.toString()} => gameElementIdArrOfUp`);
 
                 // 合并两个数组 必须是 gameElementIdArrOfRemoved 放在后面 因为是从上往下的
                 // 删除的元素 从上面落下 作为新的元素
                 let gameElementIdArrOfSorted = gameElementIdArrAtUp.concat(gameElementIdArrOfRemoved);
 
-                console.log('gameElementIdArrOfSorted: ', gameElementIdArrOfSorted);
+                console.log('gameElementIdArrOfSorted: ', gameElementIdArrOfSorted.toString());
 
                 // 将当前列元素重新放入map中，并改变元素Location
                 // 从下往上遍历行 将 gameElementIdArrOfSorted 重新分配给每一行的元素
@@ -156,9 +156,10 @@ class MapControl {
                     if (GameData.hasGameElementIdAt(row, column)) {
                         // 从重新排好的元素中取出第一个 重新分配id location
                         let id = gameElementIdArrOfSorted.shift();
-                        console.log(`取出 ${id} <= gameElementIdArrOfSorted 分配给 row:${row} column:${column}`);
+                        let location = GameData.getLocationByRowAndColumn(row, column);
+                        console.log(`从 gameElementIdArrOfSorted 取出 id:${id} 分配给 location:${location}`);
                         GameData.mapData[row][column] = id;
-                        GameData.elements[id].setLocation(GameData.getLocationByRowAndColumn(row, column));
+                        GameData.elements[id].setLocation(location);
                     }
                 }
                 // 后续需要播放移动位置动画 ElementViewManage.updateMapData()
